@@ -1,0 +1,127 @@
+$width-of-card: 30vw;
+$padding-of-card: 20px;
+$width-of-timeline-line: 4px;
+$width-height-of-circle-of-timeline: 15px;
+
+//  style of outer part of time line section
+.about-timeline {
+    // padding: 80px 5%; 
+    background: #f9f9f9;
+    //  To center the heading
+    text-align: center;
+}
+
+//  time line section main heading style
+.about-timeline h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+//  Design of timeline section start
+.timeline {
+    //  To make timeline section to be in center
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    //  background: #000;
+}
+
+//  Line which represent timeline
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: $width-of-timeline-line;
+    background: $Primary;
+}
+
+//  Style of each card of timeline
+.timeline-card {
+    padding: $padding-of-card;
+    position: relative;
+    width: $width-of-card;
+    text-align: left;
+}
+
+// Represent dashed lines of timeline
+.timeline-card::before {
+    content: "";
+    position: absolute;
+
+    transform: translate(calc(-1 * ($padding-of-card)), -50%);
+
+    width: calc(20vw + calc($padding-of-card / 2));
+    border: 2px dashed $Primary;
+}
+
+// Represent Circle of timeline
+.timeline-card::after {
+    content: "";
+    position: absolute;
+
+    transform: translate(calc(-1 * (($padding-of-card) + (calc($width-height-of-circle-of-timeline /2)))), -50%);
+
+    width: $width-height-of-circle-of-timeline;
+    height: $width-height-of-circle-of-timeline;
+    background: $Primary;
+    border-radius: 50%;
+}
+
+.timeline-card:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-card:nth-child(odd)::before {
+    inset: 50% 0 50% 100%;
+}
+
+.timeline-card:nth-child(odd)::after {
+    inset: 50% 0 50% 100%;
+}
+
+.timeline-card:nth-child(even) {
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.timeline-card:nth-child(even)::before {
+    inset: 50% 0;
+    transform: translate(calc(-100% + $padding-of-card), -50%);
+}
+
+.timeline-card:nth-child(even)::after {
+    inset: 50% 0;
+    transform: translate(calc(-100% + $padding-of-card + calc($width-height-of-circle-of-timeline / 2)), -50%);
+}
+
+
+.timeline-date {
+    font-size: 18px;
+    font-weight: bold;
+    color: $Primary;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+//  Design of timeline section ends

@@ -1,0 +1,34 @@
+// Color Palette
+$Primary: #f40464;
+$Secondary: #ff6f91;
+$Text-color: #f9f9f9;
+$Body-bg: #121212;
+$Neutral-Gray: #b0b0b0;
+$toggle-btn-bg: #f9f9f9;
+$toggle-btn-text-color: #1a1a1a;
+// Primary -> (Main brand color)
+// Secondary -> (Lighter variant for accents)
+// Text -> (For text, navbar, and footer backgrounds)
+// Body-bg -> (For backgrounds and contrast)
+// Neutral Gray -> (For subtle text and dividers)
+// toggle-btn-bg -> Toggle btn background color
+// toggle-btn-text-color -> Toggle btn icon color
+
+
+// For Smooth Transition
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+// Body in Dark theme
+body {
+    background: $Body-bg;
+    color: $Text-color;
+}
+
+// Project Cards in dark theme
+.card {
+    background: #1a1a1a;
+}
+
+// Borders & Dividers: #333333

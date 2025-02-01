@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.skill_section {
+    width: 100%;
+    max-width: 1440px;
+    margin: 2rem auto 0;
+
+    .heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #222;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+.slider {
+    width: max(calc(var(--w) * var(--quantity)), max-content);
+    height: max-content;
+
+    overflow-x: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+
+    &:hover .item {
+        cursor: pointer;
+        animation-play-state: paused;
+    }
+
+    .items {
+        position: relative;
+        padding: var(--padding) 0;
+
+        min-height: calc(calc(var(--h) * 2.5) + calc(var(--padding) * 2));
+
+        width: 100%;
+        min-width: calc(var(--w) * var(--quantity));
+        // So that width of content is not effected by width of "items"
+
+
+        .item {
+            position: absolute;
+            left: max(calc(var(--w) * var(--quantity)), 100%);
+            // So that each item is outside the "items" container
+
+            // To Center the content
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: max-content;
+
+            animation: autorun var(--animation-speed) linear infinite;
+            animation-delay: calc(calc((var(--animation-speed) / var(--quantity)) * (calc(var(--quantity) - var(--position))) * -1));
+
+            // To keep content of item in a single row
+            display: flex;
+            gap: .5rem;
+
+            img {
+                width: 3.5rem;
+            }
+
+            .text {
+                padding: .5rem 0;
+                // width: max-content;
+                width: var(--w);
+                text-align: left;
+                font-size: var(--h);
+            }
+
+            @keyframes autorun {
+                to {
+                    left: calc(-1 * calc(var(--w) * 1.5));
+                    // So that each "item" move to left till it comp. gets towards left.
+                }
+            }
+        }
+    }
+}

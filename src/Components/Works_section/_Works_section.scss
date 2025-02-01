@@ -1,0 +1,181 @@
+.work_display_section {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: #222;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+.card_container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+    .card {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        border-radius: 15px;
+        border: 2px solid transparent;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        overflow: hidden;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-5px);
+            border-color: #f40464;
+        }
+
+        .img {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &:hover img {
+                transform: scale(1.05) rotate(2deg);
+            }
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+
+            .number {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #f40464;
+                letter-spacing: 1px;
+                text-shadow: 2px 2px 10px rgba(244, 4, 100, 0.3);
+            }
+
+            .name_and_description {
+                .name {
+                    font-size: 1.75rem;
+                    font-weight: bold;
+                    color: #222;
+                    transition: color 0.3s ease-in-out;
+
+                    &:hover {
+                        color: #f40464;
+                    }
+                }
+
+                .descripton {
+                    font-size: 1rem;
+                    color: #555;
+                    line-height: 1.6;
+                }
+            }
+
+            .lang_used {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                .lang {
+                    background: #f40464;
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    font-size: 0.875rem;
+                    font-weight: bold;
+                    transition: background 0.3s ease-in-out;
+
+                    &:hover {
+                        background: #d30358;
+                    }
+                }
+            }
+
+            .live {
+                a {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: #f40464;
+                    text-decoration: none;
+                    position: relative;
+                    display: inline-block;
+                    transition: color 0.3s ease-in-out;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -3px;
+                        width: 100%;
+                        height: 2px;
+                        background: #f40464;
+                        transform: scaleX(0);
+                        transition: transform 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        color: #d30358;
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Alternate Layout for Odd and Even Cards */
+    .card:nth-child(odd) {
+        grid-template-columns: 1fr 2fr; /* Image on left */
+    }
+
+    .card:nth-child(even) {
+        grid-template-columns: 2fr 1fr; /* Image on right */
+        
+        .img {
+            order: 2; /* Move image to the right */
+        }
+
+        .details {
+            order: 1; /* Move details to the left */
+        }
+    }
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+    .work_display_section {
+        padding: 1rem;
+
+        .card {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 1.5rem;
+
+            .details {
+                align-items: center;
+                gap: 1.5rem;
+
+                .lang_used {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

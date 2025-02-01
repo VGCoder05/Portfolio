@@ -1,0 +1,46 @@
+// Color Palette
+$Primary: #f40464;
+$Secondary: #ff6f91;
+$Text-color: #1a1a1a;
+$Body-bg: #f9f9f9;
+$Neutral-Gray: #b0b0b0 ;
+$toggle-btn-bg:#121212;
+$toggle-btn-text-color:#f9f9f9;
+// Primary -> (Main brand color)
+// Secondary -> (Lighter variant for accents)
+// Text -> (For text, navbar, and footer backgrounds)
+// Body-bg -> (For backgrounds and contrast)
+// Neutral Gray -> (For subtle text and dividers)
+
+
+// Shadows
+$shadow-light: 0px 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0px 6px 12px rgba(0, 0, 0, 0.15);
+$shadow-dark: 0px 8px 16px rgba(0, 0, 0, 0.2);
+// $shadow-light -> small elements like buttons.
+// $shadow-medium -> cards.
+// $shadow-dark -> pop-ups and modals.
+
+
+// For Smooth Transition
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+// Body in ligth theme
+body{
+    background: $Body-bg;
+    color: $Text-color;
+}
+
+// Project Cards in light theme
+.card{
+    background: #ffffff;
+}
+
+
+
+// Borders & Dividers: #e0e0e0
+// Shadows: Soft for a subtle effect
+// $light-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
