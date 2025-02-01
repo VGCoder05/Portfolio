@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.skill_section {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1440px;
+
+}
+
+.slider {
+    padding: var(--padding) 0;
+    width: 100%;
+
+    min-height: calc(calc(var(--height) * 2) + calc(var(--padding) * 2));
+    background-color: #ccc;
+    overflow-x: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+
+    .items {
+        position: relative;
+        width: 100%;
+        min-width: calc(var(--width) * var(--quantity));
+        // So that width of content is not effected by width of "items"
+
+        display: grid;
+        grid-auto-flow: column;
+        // grid-auto-columns: max-content;
+        // gap: 1rem;
+
+        .item {
+            position: absolute;
+            left: 100%;
+            // So that each item is outside the "items" container
+
+            // To Center the content
+            top: calc(50% + calc(var(--padding) * 2));
+            transform: translateY(calc(-1 * calc(50% + calc(var(--padding) / 2))));
+
+            width: max-content;
+            background: #000;
+            animation: autorun var(--animation-speed) linear infinite;
+            animation-delay: calc(calc((var(--animation-speed) / var(--quantity)) * (calc(var(--quantity) - var(--position))) * -1));
+
+            // To keep content of item in a single row
+            display: flex;
+            gap: .5rem;
+
+            @keyframes autorun {
+                to {
+                    left: calc(-1 * var(--child-width));
+                    // So that each "item" move to left till it comp. gets towards left.
+                }
+            }
+
+            img {
+                width: 2.5rem;
+            }
+
+            .text {
+                padding: .5rem;
+                width: max-content;
+                text-align: center;
+                font-size: var(--height);
+                background: #c80f0f;
+            }
+        }
+    }
+}

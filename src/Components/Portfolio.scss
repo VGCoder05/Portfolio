@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "Portfolio/Basic_components";
+
+body {
+    background: $Body-bg;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10rem;
+
+    // Scrollbar
+    &::-webkit-scrollbar{
+        width: .8rem;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: #ccc;
+        border-radius: 1rem
+    }
+}
+
+// Navbar
+@import "Navbar/Navbar";
+
+// Banner
+@import "Banner_section/Banner_section";
+
+// About me 
+@import "About_me_section/About_me_section";
+
+// Skill bar
+@import "Skills_section/Skills_section";
+
+// Works display 
+@import "Works_section/Works_section";
+
+// Contact form
+@import "Contact_section/Contact_section";
+
+

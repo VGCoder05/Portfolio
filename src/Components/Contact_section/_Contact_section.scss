@@ -1,0 +1,131 @@
+.contact {
+    padding: 80px 5%;
+    background: #f9f9f9;
+    text-align: center;
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+
+        .contact-form {
+            @extend %extra;
+
+            form {
+                padding-right: 20px;
+
+                .form-group {
+                    margin-bottom: 20px;
+                    text-align: left;
+
+                    label {
+                        display: block;
+                        font-size: 16px;
+                        margin-bottom: 8px;
+                    }
+
+                    input {
+                        @extend %form_elements;
+                    }
+
+                    textarea {
+                        @extend %form_elements;
+                        resize: vertical;
+                    }
+                }
+
+                .btn {
+                    padding: 12px 24px;
+                    background: $Primary;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background 0.3s;
+
+                    &:hover {
+                        background: $Secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-info {
+        @extend %extra;
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+
+            li {
+                margin-bottom: 16px;
+
+                i {
+                    margin-right: 10px;
+                    color: $Primary;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+
+            a {
+                color: $Primary;
+                font-size: 24px;
+                transition: none;
+
+                &:hover {
+                    color: $Secondary;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+%extra {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+%form_elements {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
